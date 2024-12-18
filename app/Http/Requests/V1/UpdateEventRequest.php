@@ -41,7 +41,7 @@ class UpdateEventRequest extends FormRequest
                 'sportArt' => ['required', Rule::in(['Kajak', 'Kanadier', 'Packraft', 'alle'])],
                 'typ' => ['required', Rule::in(['Paddelreise', 'Kanukurs', 'Eskimotieren', 'Packraft Kurs'])],
                 'guide' => ['nullable'],
-                'wirdAngezeigt' => ['required', 'boolean'],
+                'wirdAngezeigt' => ['required'],
                 'paddelreiseGruppe' => ['nullable'],
                 'anzahlPausentage' => ['nullable'],
                 'anmeldeSchluss' => ['nullable']
@@ -65,7 +65,7 @@ class UpdateEventRequest extends FormRequest
                 'sportArt' => ['sometimes', 'required', Rule::in(['Kajak', 'Kanadier', 'Packraft', 'alle'])],
                 'typ' => ['sometimes', 'required', Rule::in(['Paddelreise', 'Kanukurs', 'Eskimotieren', 'Packraft Kurs'])],
                 'guide' => ['sometimes', 'nullable'],
-                'wirdAngezeigt' => ['sometimes', 'required', 'boolean'],
+                'wirdAngezeigt' => ['sometimes', 'required'],
                 'paddelreiseGruppe' => ['sometimes', 'nullable'],
                 'anzahlPausentage' => ['sometimes', 'nullable'],
                 'anmeldeSchluss' => ['sometimes', 'nullable']

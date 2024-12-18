@@ -39,7 +39,7 @@ class StoreEventRequest extends FormRequest
             'sportArt' => ['required', Rule::in(['Kajak', 'Kanadier', 'Packraft', 'alle'])],
             'typ' => ['required', Rule::in(['Paddelreise', 'Kanukurs', 'Eskimotieren', 'Packraft Kurs'])],
             'guide' => ['nullable'],
-            'wirdAngezeigt' => ['required', 'boolean'],
+            'wirdAngezeigt' => ['required'],
             'paddelreiseGruppe' => ['nullable'],
             'anzahlPausentage' => ['nullable'],
             'anmeldeSchluss' => ['nullable']
