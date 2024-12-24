@@ -27,3 +27,26 @@ Route::group(['prefix' => 'v1',
                 Route::apiResource('events', EventController::class);
                 Route::apiResource('states', StateController::class);
             });
+
+
+Route::namespace('App\Http\Controllers\Api\V1')->group(function () {
+  Route::prefix('v1')->group(function() {
+    Route::controller(AuthController::class)->group(function () {
+      Route::post('register', 'register');
+      Route::post('login', 'login');
+    });
+  });  
+});
+
+
+//Logout braucht sanctum, weil das Token, dass beim login erstellt wurde, mit dem 
+//Logout zurück gegeben werden muss. 
+Route::namespace('App\Http\Controllers\Api\V1')->group(function () {
+  Route::prefix('v1')->group(function() {
+    Route::middleware('auth:sanctum')->group(function(){
+      Route::controller(AuthController::class)->group(function () {
+        Route::post('logout', 'logout');
+      });
+    });
+  });  
+});
